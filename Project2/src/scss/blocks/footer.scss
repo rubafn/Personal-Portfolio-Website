@@ -1,0 +1,6 @@
+@use "../utils/vars";
+footer{
+    background-color: vars.$primary-color;
+    text-align: center;
+    padding: 20px;
+}

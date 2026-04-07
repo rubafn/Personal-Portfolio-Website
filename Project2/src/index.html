@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruba Nabhan</title>
+    <link rel="stylesheet" href="../dest/main.css">
+</head>
+<body>
+    <header class = "nav">
+        <ul class = "nav__list">
+            <li><a href="#home" class = "nav__link">Home</a></li>
+            <li><a href="#projects" class = "nav__link">Projects</a></li>
+            <li><a href="#resume" class = "nav__link">Resume</a></li>
+            <li><a href="#skills" class = "nav__link">Skills</a></li>
+            <li><a href="#contact" class = "nav__link">Contact</a></li>
+        </ul>
+    </header>
+    <section class = "intro" id = "home">
+        <img src="image/personal.jpg" alt="Ruba Nabhan's Photo" class = "intro__img">
+        <div class = "intro__content">
+            <h1 class = "intro__title">Hi, I'm Ruba Nabhan</h1>
+            <p class = "intro__desc">Welcome to my personal website! I'm a Computer Science student with a passion for web development and creating user-friendly applications.</p>
+        </div>
+    </section>
+    <section class="projects">
+        <h2 class="projects__title">Latest Projects</h2>
+        <div class="projects__cards">
+            <div class="projects__card">
+                <img src="image/Project1.png" alt="Project 1 Image" class="projects__img">
+                <h3 class="projects__card-title">Cafe App</h3>
+                <p class="projects__card-desc">
+                    JavaFX application for managing a cafe using database principles.
+                </p>
+            </div>
+            <div class="projects__card">
+                <img src="image/project2.jpg" alt="Project 2 Image" class="projects__img">
+                <h3 class="projects__card-title">Business Website</h3>
+                <p class="projects__card-desc">
+                    A business website built using HTML and CSS to showcase my skills.
+                </p>
+            </div>
+            <div class="projects__card">
+                <img src="image/project3.png" alt="Project 3 Image" class="projects__img">
+                <h3 class="projects__card-title">File de/compressor</h3>
+                <p class="projects__card-desc">
+                    A simple file compression and decompression application built with Java using Huffman algorithm.
+                </p>
+            </div>
+        </div>
+        <button class="projects__button">
+            <a href="projects.html">View All Projects</a>
+        </button>
+    </section>
+    <footer>
+        <p>&copy; 2026 Ruba Nabhan. All rights reserved.</p>
+    </footer>
+    <script>
+        const nav = document.querySelector('.nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('nav--small', window.scrollY > 50);
+        });
+    </script>   
+</body>
+</html>

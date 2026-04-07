@@ -1,0 +1,37 @@
+@use "../utils/mixins";
+@use "../utils/vars";
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: vars.$primary-color;
+  padding: 25px 0;
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+  &.nav--small {
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  &__list {
+    @include mixins.flex-row;
+    flex-direction: column;
+    gap: 40px;
+    list-style: none;
+  }
+  &__link{
+    text-decoration: none;
+    color: vars.$secondary-color;
+    font-weight: 500;
+  }
+}
+@media (min-width: 768px) {
+  .nav {
+    &__list{
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+  }
+}

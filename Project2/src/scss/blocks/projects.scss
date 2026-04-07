@@ -1,0 +1,67 @@
+@use "../utils/vars";
+@use "../utils/mixins";
+
+.projects {
+  &__cards {
+    @include mixins.flex-row;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  &__card {
+    background-color: vars.$primary-color;
+    border-radius: 8px;
+    border: 1px solid vars.$secondary-color;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+
+    //Fade-in animations
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 0.8s ease forwards;
+    
+    &:hover,
+    &:focus-within {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .projects__cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .projects__card {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    margin-bottom: 20px;
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
